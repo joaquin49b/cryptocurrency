@@ -1,5 +1,4 @@
 import express from "express";
-import bodyParser from 'body-parser';
 
 import { config } from '../config/config';
 import router from "./routers/router";
@@ -26,11 +25,6 @@ export default class Server {
   }
 
   config() {
-
-    this.app.use(bodyParser.urlencoded({ extended: true }));
-    this.app.use(bodyParser.json());
-
     this.app.use(router);
-
   }
 }
